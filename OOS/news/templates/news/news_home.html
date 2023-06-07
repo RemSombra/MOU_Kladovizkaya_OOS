@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}МОУ Кладовицкая ООШ{% endblock %}
+
+{% block content %}
+<section class="section_news">
+    <div class="container">
+         <div class="section__header">
+            <h2 class="section__title">Новости</h2>
+            {% for el in news %}
+                <div class="news_section">
+                    <h3>
+                        <span class="news_title">{{ el.title }}</span>
+                        <span class="news_date">{{ el.date }}</span>
+                    </h3>
+                    <p>{{ el.intro_anons }}</p>
+                    <img class="news_img" src="{{ el.photo.url }}">
+                    <p class="section__text_news">
+                        {{ el.full_text }}
+                    </p>
+                </div>
+            {% endfor %}
+         </div>
+    </div> <!-- /.container -->
+
+</section>
+
+{% endblock %}
