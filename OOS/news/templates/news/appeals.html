@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}МОУ Кладовицкая ООШ{% endblock %}
+
+{% block content %}
+<form class="appeals_form" action="{% url 'appeals' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить</button>
+</form>
+{% endblock %}
